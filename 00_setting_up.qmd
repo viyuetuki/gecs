@@ -1,0 +1,41 @@
+---
+title: "0. Setting Up"
+---
+
+# IDE or not to IDE?
+
+An *integrated development environment* (IDE)
+
+
+# Visual Studio Code
+
+Everyone will use VS Code.
+
+## Windows Subsystem Linux
+
+Installatino manual for WSL
+
+## Profiles
+> Profiles can be used to customize VS Code for students to ease the use in a classroom setting. Profiles allow educators to quickly share a customized VS Code setup with students.
+>
+> [VS Code manual](https://code.visualstudio.com/docs/configure/profiles#_education)
+
+Stored in `settings.json` file
+
+https://code.visualstudio.com/docs/configure/profiles
+
+https://code.visualstudio.com/docs/configure/profiles#_share-profiles
+
+https://code.visualstudio.com/docs/configure/profiles#_import
+
+## Workspaces
+Any use? A workspace for GECS.
+
+# Pixi
+1. Intstall Pixi using the default suggestion with Curl.
+2. Create a virtual environment for this course.
+    
+    `pixi init gecs`
+
+# Why Python?
+Although the course advertises itself as programming language agnostic, Python will be used to provide 'meat' for coding and project examples.

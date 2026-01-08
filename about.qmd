@@ -1,0 +1,30 @@
+---
+title: "About"
+---
+
+```{mermaid}
+flowchart LR
+  A[Data] --> B[Clean] --> C[Analysis] --> D[Results] --> E[Figures] --> F[Paper]
+
+  subgraph GECS[GECS]
+    direction LR
+    B
+    C
+    D
+    E
+  end
+
+  style GECS fill:#eef,stroke:#66f,stroke-width:2px
+
+```
+
+```{mermaid}
+flowchart LR
+  subgraph GECS
+    direction TB
+    B1 --> B2 --> B3 --> B1
+  end
+  A(Raw Data) --> GECS --> Z(Paper)
+
+```
+
