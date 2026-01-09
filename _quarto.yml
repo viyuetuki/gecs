@@ -18,7 +18,7 @@ website:
         href: index.qmd
       # - text: "About"
       #   href: about.qmd
-      -  auto: 0?_*
+      # -  auto: 0?_*
 
 format:
   html:
