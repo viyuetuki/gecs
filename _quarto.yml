@@ -16,6 +16,8 @@ website:
     contents: 
       - text: "Home"
         href: index.qmd
+      - text: "0. Setting Up"
+        href: 00_setting_up.qmd
       # - text: "About"
       #   href: about.qmd
       # -  auto: 0?_*
@@ -29,5 +31,6 @@ format:
     toc: true
     mermaid:
       theme: neutral
+    callout-appearance: simple
 
 
