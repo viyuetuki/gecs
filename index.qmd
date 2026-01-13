@@ -61,15 +61,13 @@ style Irreproducible fill:transparent,stroke-width:0px
 
 To provide an overview of core software development practices that support efficient research project management and its reproducibility.
 
-# Descrition
+# Description
 
 Less time for programming, more time for science (and your other stuff).
 
-# What this course is NOT?
+# Target Audience
 
--   Introduction to a specific programming language (e.g., Python, Bash, etc.)
--   Numerical simulations/modeling course
--   High Performance Computing (HPC) training
+This course is for researchers who want to learn how to automate repetitive tasks in data analysis. Some prior programming experience is helpful but not required.
 
 # Schedule
 
@@ -95,29 +93,33 @@ For official details, see [the Graduate School hosted website](https://groups.oi
 -   Pin Ju Chou Y1 \@CNEU (rotation)
 -   Vitoria Yumi Uetuki Nicoleti Y1 \@NCU (rotation)
 
-# Target audience
-
-This course is for researchers who want to learn how to automate repetitive tasks in data analysis. Some prior programming experience is helpful but not required.
-
 # Manifesto
 
 > "Teach a course you want to attend."
 >
-> adapted from Austin Kleon's ["A MANIFESTO: WRITE THE BOOK YOU WANT TO READ"](https://austinkleon.com/2008/12/18/a-manifesto-write-the-book-you-want-to-read/)
+> adapted from Austin Kleon, *Steal Like an Artist*
 
-As cheese as it sounds, we are learinig from you (probably more at this point) that you will learn from this course. Stupid question permission is granted. Suggestions, tips, and corrections are welcome!
+As cheesy as it sounds, we are learning from you (probably more at this point) than you will learn from this course. Stupid question permission is granted. Suggestions, tips, and corrections are welcome!
 
-# Aknowledgements
+# What this course is NOT?
+
+-   Introduction to a specific programming language (e.g., Python, Bash, etc.)
+-   Numerical simulations/modeling course
+-   High Performance Computing (HPC) training
+
+# Inspiration & Credits
+
+## Acknowledgements
 
 Arthur Turrell, Greg Wilson and The Carpentries, Justin Bois, Richard McElreath.
 
-# References
+## References
 > "Good artists copy, great artists steal."
 >
 > — Pablo Picasso
 
 - [Coding for Economists](https://aeturrell.github.io/coding-for-economists) by Arthur Turrell
-- [Pyhton for Data Science](https://aeturrell.github.io/python4DS) by Arthur Turrell
+- [Python for Data Science](https://aeturrell.github.io/python4DS) by Arthur Turrell
 - [bootcamp](https://justinbois.github.io/bootcamp) by Justin Bois
 - [Research Software Engineering with Python](https://third-bit.com/py-rse) by The Carpentries
 <!-- - [BE/Bi 103](https://bebi103a.github.io/) by Justin Bois -->
