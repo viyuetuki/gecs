@@ -144,7 +144,7 @@ We will understand the logic behind this command later in the next section as we
 ![](images/paste-21.png)
 
 ::: {.callout-tip title="Default Commnad Promnt settings" appearance="simple"}
-I suggest you make Ubuntu your Default profile. **Command Promt** > **Settings** > **Start-up** > **Default profile** and choose Ubuntu.
+I suggest you make Ubuntu your Default profile. **Command Promt** > **Settings** > **Start-up** > **Default profile**, choose Ubuntu and press **Save**.
 :::
 
 You are now set and ready to install all the wonderful programming tools that have been developed over the past 50 or so years by the developer's community. As you might guess, there are hundreds of thousands of programs out there, and ideally, we would like to keep track of what we install. That will be our next installation.
