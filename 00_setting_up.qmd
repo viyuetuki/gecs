@@ -65,13 +65,13 @@ If you're experiencing some troubles with installation, it is worth:
 ::: {.callout-important appearance="simple"}
 You need to restart your computer after installing WSL.
 :::
-Once restarted, open **PowerShell** again in the administartive mode and type:
+4. Once restarted, open **PowerShell** again in the administartive mode and type:
 
-``` bash
-wsl --install
-```
+    ``` bash
+    wsl --install
+    ```
 
-By default, Ubuntu will be installed as the main Linux distribution. WSL and Ubuntu will appear in your Start Menu and the Search Bar options.
+    By default, Ubuntu will be installed as the main Linux distribution. 
 
 ### Creating a Default UNIX User Account
 
@@ -91,7 +91,7 @@ If your name is John Derek Smith you can try: `jsmith`, `jdsmith`, or `johnsmith
 For a password, you can set the same one you have for your OIST account to make it easier to remember. It will be used for login and authentication but, more importantly, commands like `sudo` that grant administrative priviledges. If not sure what makes a strong password [consult XKCD](https://xkcd.com/936/).
 :::
 
-1.  Launch Ubuntu terminal
+1.  Launch Ubuntu terminal.
 
 ![](images/paste-11.png)
 
@@ -100,6 +100,10 @@ For a password, you can set the same one you have for your OIST account to make 
 ![](images/paste-12.png)
 
 Enter your chosen username and hit **Enter**. If you make a mistake in typing your username, you can close the window and open it again. In this example, `tunkert` is the username.
+
+::: {.callout-tip appearance="simple"}
+If you closed the terminal window or made a mistake while typying your username or password do not worry. Ubuntu is already installed on your computer and you can open it from the **Command Promt** application.
+:::
 
 ![](images/paste-13.png)
 
@@ -138,6 +142,10 @@ We will understand the logic behind this command later in the next section as we
 8.  The update will begin. In the end, you will have an empty typing line with the latest Ubuntu.
 
 ![](images/paste-21.png)
+
+::: {.callout-tip title="Default Commnad Promnt settings" appearance="simple"}
+I suggest you make Ubuntu your Default profile. **Command Promt** > **Settings** > **Start-up** > **Default profile** and choose Ubuntu.
+:::
 
 You are now set and ready to install all the wonderful programming tools that have been developed over the past 50 or so years by the developer's community. As you might guess, there are hundreds of thousands of programs out there, and ideally, we would like to keep track of what we install. That will be our next installation.
 
