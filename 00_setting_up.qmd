@@ -63,10 +63,15 @@ If you're experiencing some troubles with installation, it is worth:
 ![](images/paste-2.png)
 
 ::: {.callout-important appearance="simple"}
-You might need to restart your computer after installing WSL.
+You need to restart your computer after installing WSL.
 :::
+Once restarted, open **PowerShell** again in the administartive mode and type:
 
-By default, Ubuntu will be installed as the main Linux distribution. WSL will appear in your Start Menu and the Search Bar options.
+``` bash
+wsl --install
+```
+
+By default, Ubuntu will be installed as the main Linux distribution. WSL and Ubuntu will appear in your Start Menu and the Search Bar options.
 
 ### Creating a Default UNIX User Account
 
