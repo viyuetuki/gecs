@@ -18,19 +18,9 @@ by Justin Bois, [bootcamp 2025](https://justinbois.github.io/bootcamp/2025_wis/l
 
 # UNIX
 
-```{mermaid}
-flowchart LR
-
-OS --> Family --> Distribution --> Derivative
-UNIX --> Linux --> Debian --> Ubuntu
-
-```
-
 The motivation behind the use of terminal will be explained in [the next session](01_terminal.qmd)
 
 First, we need an efficient way to interact with your computer. UNIX is by far the most well supported and used operating system (OS) to do so. It allows Apple Mac users to sigh in relief since their computers are based on UNIX and can skip to the next section. Windows, however, is another story.
-
--   MulQuaBio
 
 ## WSL (Windows users only)
 
