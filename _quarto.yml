@@ -18,6 +18,8 @@ website:
         href: index.qmd
       - text: "0. Setting Up"
         href: 00_setting_up.qmd
+      - text: "1. Terminal"
+        href: 01_terminal.qmd
       # - text: "About"
       #   href: about.qmd
       # -  auto: 0?_*
