@@ -7,25 +7,13 @@ format: html
 >
 > -   William Shotts, *The Linux Command Line: A Complete Introduction*
 
-If there is one software skill you had to learn, it would be working with a UNIX-type shell.
-
-::: {.callout-note appearance="simple"}
-Confusion in Terminology
-
-Terminal, Console, Shell, Command Line Interface, Command Line Interpreter, Kernel, and OS are used interchangeably.
-:::
-
-# History
-
-![Evolution of operating systems, its kernels, and distributions. <https://www.reddit.com/r/coolguides/comments/k1lopj/os_family_tree/>](images/paste-37.png)
-
-![https://www.reddit.com/r/compsci/comments/kposlx/i_made_a_simple_diagram_on_history_of_os_feel/](images/paste-38.png)
+If there is one software skill you had to learn, it would be working with a terminal. It is ubiquitous! It has been around since 1970s and is likely to stay, unlike other tools. Thus, investing your time learning how to use it properly is worth it.
 
 # Integrated Terminal
 
 Opening a terminal varies depending on your operating system. On macOS, you can find the Terminal application in Applications → Utilities. On Linux, you might find it in your applications menu, or you can press `Ctrl+Alt+T` on many systems. On Windows, you'll want to use Ubuntu as part of the Windows Subsystem for Linux (WSL).
 
-We will be interacting with a terminal inside VS Code. Start VS Code and open a folder or workspace. Open the terminal by selecting **View** > **Terminal** from the menu bar, or by pressing the `` Ctrl/Cmd+` `` keyboard shortcut. Based on your operating system configuration, the terminal opens with a default shell like Bash, PowerShell, or Zsh. The shell's working directory starts at the root of the workspace folder.
+We will be interacting with a terminal inside VS Code. Start VS Code and open a folder or workspace. Open the terminal by selecting **View** \> **Terminal** from the menu bar, or by pressing the `` Ctrl/Cmd+` `` keyboard shortcut. Based on your operating system configuration, the terminal opens with a default shell like Bash, PowerShell, or Zsh. The shell's working directory starts at the root of the workspace folder.
 
 Once you have your terminal open, you'll see a prompt—usually something like `user@computer:~$` or just `$` in Ubuntu or `%` on macOS. This is where you type your commands.
 
@@ -100,11 +88,11 @@ You're now in the `/usr` directory. Notice how `pwd` shows a different path. You
 
 Some useful shortcuts for relative paths:
 
-- `cd .` - stay in the current directory
-- `cd ..` - go up one level to the parent directory
-- `cd -` - go back to the previous directory
-- `cd ~` - go to your home directory
-- `cd` (with no arguments) - also goes to your home directory
+-   `cd .` - stay in the current directory
+-   `cd ..` - go up one level to the parent directory
+-   `cd -` - go back to the previous directory
+-   `cd ~` - go to your home directory
+-   `cd` (with no arguments) - also goes to your home directory
 
 Try these out:
 
@@ -395,8 +383,8 @@ Now suppose it turns out that file shouldn’t be in ***lab1*** after all. Let�
 mv lab1/* .
 ```
 
-The `mv` command also lets us move more than one file at a time. If you pass more than two arguments, the last one is taken to be the destination directory and the others are considered to be files (or directories) to move. Let’s use a single command to move ***lab.log***, all our ***\*.statue*** files and ***lab2*** into ***lab3*** (now, it's getting trippy). There’s a bit more going on here, but if you look at each argument at a time you should be able to work out what’s happening:
-****
+The `mv` command also lets us move more than one file at a time. If you pass more than two arguments, the last one is taken to be the destination directory and the others are considered to be files (or directories) to move. Let’s use a single command to move ***lab.log***, all our ***\*.statue*** files and ***lab2*** into ***lab3*** (now, it's getting trippy). There’s a bit more going on here, but if you look at each argument at a time you should be able to work out what’s happening: \*\*\*\*
+
 ``` bash
 mv lab.log *.statue lab2 lab3
 ls
@@ -405,7 +393,7 @@ ls lab3
 
 Let's keep ***lab.log*** in ***lab3*** but everyhting else out:
 
-```bash
+``` bash
 mv lab3/lab? lab3/*.statue .
 ```
 
@@ -461,12 +449,60 @@ ls
 Unlike moving files to a trash or recycle bin on a graphical interface, `rm` permanently deletes files. There is no undo! Always double-check your command before pressing **Enter**.
 :::
 
-
 # A Bit of Plumbing
 
 # The Command Line and the Superuser
 
 # Hidden Files
+
+
+# Terminology
+
+I want to clear up the confusion with the terminology. Starting from the left in the figure below, *terminal* or more properly *terminal emulator* is a text-based input/output program that communicates with your computer. You type commands in a *command line* or a *command line interface (CLI)*. The command is passed to *shell* which is a command line interpreter (confusingly, it can be abbreviated as CLI as well, but thankfully no one does that). Next, *shell* talks to *operating system (OS)*. OS is agnostic to hardware and could be run on different physical machines. At the core of any *OS* is *kernel*. Finally, *kernel* talks to the hardware (CPU, GPU, RAM, disk, etc.).
+
+Only reason I give this detail that some times people use these terms interchangeably.
+
+```{mermaid}
+flowchart LR
+    H[Hardware]
+
+    subgraph OS[Operating System]
+        K[Kernel]
+    end
+
+    S[Shell]
+
+    subgraph T[Terminal]
+        C[Command Line]
+    end
+
+    T --- S --- OS --- H
+
+    %% Single hue (blue), different lightness
+    classDef l1 fill:#eaf2fb,stroke:transparent,color:#000
+    classDef l2 fill:#d0e2f2,stroke:transparent,color:#000
+    classDef l3 fill:#9ecae1,stroke:transparent,color:#000
+    classDef l4 fill:#6baed6,stroke:transparent,color:#000
+
+    %% Apply styles
+    class H l1
+    class OS l2
+    class K l4
+    class S l2
+    class T l2
+    class C l4
+
+    %% Remove subgraph borders
+    style OS fill:#d0e2f2,stroke-width:0px
+    style T fill:#d0e2f2,stroke-width:0px
+```
+
+# A Brief History
+
+When you look at most operating systems, you see that most of them stem from UNIX. Then they branch into derivatives like Linux, which is the most prominent "child". Windows, on the other hand, is isolated from UNIX and only the recent introduction of WSL allowed it to use UNIX-based tools with ease.
+
+![Evolution of operating systems, its kernels, and distributions. <https://www.reddit.com/r/coolguides/comments/k1lopj/os_family_tree/>](images/paste-37.png)
+
 
 # References
 
