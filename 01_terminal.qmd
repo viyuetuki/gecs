@@ -3,4 +3,28 @@ title: "1. Terminal"
 format: html
 ---
 
-The feared terminal ☠️
+> “Graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible.”
+>
+> -   William Shotts, *The Linux Command Line: A Complete Introduction*
+
+If there is one software skill you had to learn, it would be working with a UNIX-type shell.
+
+::: {.callout-note appearance="simple"}
+Confusion in Terminology
+
+Terminal, Console, Shell, Command Line Interface, Command Line Interpreter, Kernel, and OS are used interchangeably.
+:::
+
+![Evolution of operating systems, its kernels, and distributions. <https://www.reddit.com/r/coolguides/comments/k1lopj/os_family_tree/>](images/paste-37.png)
+
+![https://www.reddit.com/r/compsci/comments/kposlx/i_made_a_simple_diagram_on_history_of_os_feel/](images/paste-38.png)
+
+TODO:
+
+\- Autocompletions - Based on the book project - Snapshots from the VS Code terminal - Change the theme to dark - Shell, terminal, kernel Geeks for geeks article - UNIX, Linux, Debian, Ubuntu. OS tree
+
+# References
+
+-   [Chapter 2 The Basics of the Unix Shell, Research Software Engineering with Python](https://third-bit.com/py-rse/bash-basics.html) by Wilson et al.
+-   https://code.visualstudio.com/docs/terminal/basics
+-   https://ubuntu.com/tutorials/command-line-for-beginners
