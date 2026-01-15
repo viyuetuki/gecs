@@ -51,7 +51,13 @@ This shows you disk space usage. Another useful one:
 whoami
 ```
 
-This tells you which user account you're logged in as. And finally:
+This tells you which user account you're logged in as. Another useful command:
+
+``` bash
+which ls
+```
+
+The `which` command tells you the location of a program on your system. This is helpful when you want to know where a command is installed or verify that a program is available. And finally:
 
 ``` bash
 exit
@@ -525,21 +531,60 @@ As you can see, the ability to pipe data from one command to another, building u
 Most Linux command line tools include a man page. Try taking a brief look at the pages for some of the commands you've already encountered: `man ls`, `man cp`, `man rmdir` and so on. There's even a man page for the `man` program itself, which is accessed using `man man`, of course.
 :::
 
+## Downloading Files from the Web
+
+Another powerful command you encountered during [the setup process](00_setting_up.qmd) is `curl` (**C**lient **URL**). It's used to transfer data from or to a server, often for downloading files or scripts from the internet:
+
+```bash
+curl -fsSL https://pixi.sh/install.sh | sh
+```
+
+This command downloads the Pixi installation script and pipes it directly to `sh` (the shell) for execution. Let's break down the options:
+
+- `-f` - Fail silently on server errors
+- `-s` - Silent mode (don't show progress)
+- `-S` - Show errors even in silent mode
+- `-L` - Follow redirects if the URL has moved
+
+You can also use `curl` to download files and save them:
+
+```bash
+curl -O https://example.com/file.txt
+```
+
+The `-O` option saves the file with its original name.
+
+::: callout-warning
+Be cautious when piping downloaded scripts directly to a shell interpreter (`| sh` or `| bash`). Only do this with scripts from trusted sources, as they will execute with your user privileges. During setup, you used this method with official installation scripts from Pixi and Starship.
+:::
+
 # The Superuser
 
-We want encouter this command too much in this course, but some commands require elevated privileges to run. On Linux systems like Ubuntu, the `sudo` command allows you to run a command with superuser (administrator) privileges. When you use `sudo`, you'll be prompted for your password. For example:
+We won't encounter this command too much in this course, but some commands require elevated privileges to run. On Linux systems like Ubuntu, the `sudo` command allows you to run a command with superuser (administrator) privileges. When you use `sudo`, you'll be prompted for your password. 
+
+You've already used `sudo` during the setup process when you ran:
+
+``` bash
+sudo apt update && sudo apt upgrade -y
+```
+
+This command updates the package lists and upgrades installed packages on Ubuntu. The `apt` (**A**dvanced **P**ackage **T**ool) is Ubuntu's package manager. You can also install new programs:
 
 ``` bash
 sudo apt install tree
 ```
 
-This would install the `tree` program from your system's software repositories. macOS user can use Homebrew package manager, `brew` command, to install `tree`.
+This would install the `tree` program from your system's software repositories. macOS users can use the Homebrew package manager with the `brew` command to install `tree`:
 
 ```zsh
-sudo brew install tree
+brew install tree
 ```
 
-Investigate `oist/` directory structure that we ahve built with:
+::: callout-note
+Note that on macOS, `brew` typically doesn't require `sudo` as it installs to user-writable locations.
+:::
+
+Investigate the `oist/` directory structure that we have built with:
 
 ```bash
 tree .
@@ -564,12 +609,35 @@ Hidden files are commonly used for storing configuration settings. For example:
 - `.bashrc` - Configuration file for the Bash shell. Contains settings, aliases, and functions that customize your Bash environment.
 - `.zshrc` - Configuration file for the Zsh shell. Similar to `.bashrc`, but for Zsh.
 
-These files are executed everytime you start a terminal. For those of you who installed Starship, the very last command you did was to add a new line to your `.rc` file. If you remove that line, your terminal will go back to the looks it had before.
+These files are executed every time you start a terminal. During the [setup process](00_setting_up.qmd), you modified these files when installing tools like Pixi and Starship. For example, you added lines like:
 
+```bash
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
+```
+
+This command appended a line to your `.bashrc` file that tells your shell to start Starship. If you remove that line, your terminal will go back to the looks it had before.
+
+## Reloading Configuration Files
+
+When you modify configuration files like `.bashrc` or `.zshrc`, the changes won't take effect until you start a new terminal session. However, you can reload the configuration without closing your terminal using the `source` command:
+
+```bash
+source ~/.bashrc
+```
+
+Or for Zsh users:
+
+```zsh
+source ~/.zshrc
+```
+
+This reads and executes the commands from the specified file in your current shell session. You used this command during setup to activate Pixi after installation.
+
+::: callout-tip
+You can view the contents of your configuration files using `cat ~/.bashrc` or `less ~/.bashrc` to see what customizations you've made.
+:::
 
 As you progress through more advanced topics, you'll encounter many more hidden files and directories. Configuration files, cache directories, and version control metadata (like `.git/`) all use the dot-prefix convention. This naming strategy keeps your file system organized and separates system/application configuration from your regular working files. In future lessons, we'll explore how these hidden files and directories make it very convenient to manage complex configurations without cluttering your workspace.
-
-To see all files including hidden ones, use `ls -a`.
 
 # Terminology
 
