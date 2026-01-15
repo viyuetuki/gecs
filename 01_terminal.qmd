@@ -37,11 +37,21 @@ cd relative(Shortcuts: ., .., -, \~) vs absolute paths
 
 ls
 
-# Exoploring Files
+# Exploring Files
 
 ls file less
 
 Options and Arguments `command -optioins arguments` ls -lt
+
+::: callout-caution
+Try to avoid any spaces in your directory and file names. Shell interprets space as separator betwenn options or arguments. Space in names will most likely break program producing an error.
+
+You can use spaces by including names in paratheisi or quotes but that is unnecery complication.
+:::
+
+::: callout-important
+Commands are case sensetive. `ls` is not the same as `LS`, `Ls` or `lS`. Try it!
+:::
 
 # Creating Directories and Files
 
@@ -149,8 +159,8 @@ Yes, echo just prints its arguments back out again (hence the name). But combine
 ![Dr. Brenner's statue presented by Okinawa Prefecture and the Council for Promotion of OIST https://www.oist.jp/image/dr-sydney-brenners-statue](images/paste-39.png)
 
 ``` bash
-echo "VISION, CHALLENGES, INNOVATION" > syndey_brenner.statue
-cat syndey_brenner.statue
+echo "VISION, CHALLENGES, INNOVATION" > sydney_brenner.statue
+cat sydney_brenner.statue
 ```
 
 ::: {.callout-important title="File extension"}
@@ -167,13 +177,13 @@ cat svante_paabo.statue
 However, `cat` is more than just a file viewer - its name comes from ‘con**cat**enate’, meaning “to link together”. If you pass more than one filename to `cat` it will output each of them, one after the other, as a single block of text:
 
 ``` bash
-cat syndey_brenner.statue svante_paabo.statue
+cat sydney_brenner.statue svante_paabo.statue
 ```
 
 Where you want to pass multiple file names to a single command, there are some useful shortcuts that can save you a lot of typing if the files have similar names. A question mark (“?”) can be used to indicate “any single character” within the file name. An asterisk (“\*”) can be used to indicate “zero or more characters”. These are sometimes referred to as “wildcard” characters. A couple of examples might help, the following commands all do the same thing:
 
 ``` bash
-cat syndey_brenner.statue svante_paabo.statue
+cat sydney_brenner.statue svante_paabo.statue
 cat *.statue
 ```
 
@@ -232,7 +242,7 @@ Let’s begin by putting our ***svante_paabo.statue*** file into our ***lab1*** 
 mv svante_paabo.statue lab1
 ```
 
-You can confirm that the job has been done by using `ls` to see that it’s missing from the working directory, then `cd dir1` to change into ***lab1***, `ls` to see that it’s in there, then `cd ..` to move the working directory back again. Or you could save a lot of typing by passing a path directly to the `ls` command to get straight to the confirmation you’re looking for:
+You can confirm that the job has been done by using `ls` to see that it's missing from the working directory, then `cd lab1` to change into ***lab1***, `ls` to see that it's in there, then `cd ..` to move the working directory back again. Or you could save a lot of typing by passing a path directly to the `ls` command to get straight to the confirmation you're looking for:
 
 ``` bash
 ls lab1
@@ -245,24 +255,71 @@ mv lab1/* .
 ```
 
 The `mv` command also lets us move more than one file at a time. If you pass more than two arguments, the last one is taken to be the destination directory and the others are considered to be files (or directories) to move. Let’s use a single command to move ***lab.log***, all our ***\*.statue*** files and ***lab2*** into ***lab3*** (now, it's getting trippy). There’s a bit more going on here, but if you look at each argument at a time you should be able to work out what’s happening:
-
+****
 ``` bash
 mv lab.log *.statue lab2 lab3
 ls
 ls lab3
 ```
 
-::: callout-caution
-Try to avoid any spaces in your directory and file names. Shell interprets space as separator betwenn options or arguments. Space in names will most likely break program producing an error.
+Let's keep ***lab.log*** in ***lab3*** but everyhting else out:
 
-You can use spaces by including names in paratheisi or quotes but that is unnecery complication.
+```bash
+mv lab3/lab? lab3/*.statue .
+```
+
+## Renaming Files
+
+The `mv` command doesn't just move files between directories—it's also used to rename them. When you move a file to the same directory but give it a new name, you're effectively renaming it.
+
+For example, let's rename one of our statue files:
+
+``` bash
+
+mv sydney_brenner.statue brenner_sydney.statue
+cat brenner_sydney.statue
+```
+
+The file has been renamed, not moved to a different location.
+
+## Copying Files
+
+Sometimes you want to create a duplicate of a file. This is where the `cp` (**c**o**p**y) command comes in:
+
+``` bash
+cp brenner_sydney.statue sydney_brenner.statue
+ls *.statue
+```
+
+You now have two files: the original and the last-name-first copy. The `cp` command can also work with directories, but you need to use an option to do so. To copy an entire directory and all its contents, use the `-r` option (which stands for "recursive"):
+
+``` bash
+cp -r lab4 lab6
+ls
+```
+
+This creates a complete copy of `lab1` and all the files inside it, called `lab6`.
+
+## Deleting Files and Directories
+
+To remove files, use the `rm` (**r**e**m**o**v**e) command. Be careful with this—once deleted, files are generally gone for good!
+
+``` bash
+rm brenner_sydney.statue
+ls *.statue
+```
+
+The backup is gone. We have enough labs for now. To remove a directory, add the `-r` option:
+
+``` bash
+rm -r lab6
+ls
+```
+
+::: {.callout-caution title="Warning: rm is permanent"}
+Unlike moving files to a trash or recycle bin on a graphical interface, `rm` permanently deletes files. There is no undo! Always double-check your command before pressing **Enter**.
 :::
 
-::: callout-important
-Commands are case sensetive. `ls` is not the same as `LS`, `Ls` or `lS`. Try it!
-:::
-
-# Moving and Manipulating Files
 
 # A Bit of Plumbing
 
