@@ -3,7 +3,7 @@ title: "2. Project Structure"
 format: html
 ---
 
-> If you get hit a bus today, will your colleagues be able to run your code tomorrow?
+> If you get hit by a bus today, will your colleagues be able to run your code tomorrow?
 >
 > [The Bus Factor](https://en.wikipedia.org/wiki/Bus_factor)
 
@@ -45,7 +45,7 @@ unzip gecs-02-project_structure-2025-02_messy-dir
 
 Once unzipped, open the directory with VS Code (`Cmd+O`).
 
-### Strucutred Project
+### Structured Project
 
 ``` bash
 .
@@ -89,12 +89,12 @@ The directory structure distinguishes three kinds of folders:
 
 ``` bash
 .
-├── README.md          <- Descrition and how to run the project (HW)
-├── requirements.txt   <- System requirements for runnig the project (HW)
+├── README.md          <- Description and how to run the project (HW)
+├── requirements.txt   <- System requirements for running the project (HW)
 ├── processed_data     <- Processed data ready for analysis (PG)
 ├── raw_data           <- The original, immutable data dump (RO)
 ├── scripts            <- Scripts for this project (HW)
-└── results            <- Project resuslts: tables, figures, etc. (PG) 
+└── results            <- Project results: tables, figures, etc. (PG) 
 ```
 
 ## Naming Files and Directories
@@ -133,7 +133,7 @@ You can use a variation of the above as long as you are consistent within a proj
 
 ## Project Template
 
-Instead of creating proejct directory wiht all its supplementey files, softawre developers came up wiht a boiler plate strucutres that can be created in minutes. [Cookie Cutter Data Science](https://cookiecutter-data-science.drivendata.org/) project is one of those. Although, the default template is aimed towards machine learning / data science researchers, you can find a simpler one shared by other researchers [online](https://github.com/aeturrell/cookiecutter-research-project/tree/main). Another option, to create your own template that suits your needs.
+Instead of creating project directory with all its supplementary files, software developers came up with a boilerplate structure that can be created in minutes. [Cookie Cutter Data Science](https://cookiecutter-data-science.drivendata.org/) project is one of those. Although, the default template is aimed towards machine learning / data science researchers, you can find a simpler one shared by other researchers [online](https://github.com/aeturrell/cookiecutter-research-project/tree/main). Another option, to create your own template that suits your needs.
 
 ![](images/paste-2.gif)
 
