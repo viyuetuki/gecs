@@ -3,3 +3,143 @@ title: "2. Project Structure"
 format: html
 ---
 
+> If you get hit a bus today, will your colleagues be able to run your code tomorrow?
+>
+> [The Bus Factor](https://en.wikipedia.org/wiki/Bus_factor)
+
+Software projects can be messy. Imagine you join a lab and your supervisor hands a project folder left by a previous postdoc. It usually looks like this:
+
+![https://datacarpentry.github.io/rr-organization1/fig/files_messy_tidy.png](images/paste-44.png)
+
+OK, probably not as extreme. Still, it is common for a new comer to data science to put everything into a single folder: data, scripts, figures, tables. That can work if you only need to do analysis once and no one else will ever do it again, including yourself. That is far from truth in research be it academia or industry. In this tutorial we will see quick fixes you can do to help others and the future you to understand what does a project do. Let's get organized.
+
+# Lost Book Project
+
+We will look at two project structures: messy and structured - to see what works and what does not in short and long term projects.
+
+### Messy Project
+
+``` bash
+.
+├── analysis.sh
+├── book1.txt
+├── book102.txt
+├── book2.txt
+├── book3.txt
+├── book5.txt
+├── book55.txt
+├── book79.txt
+├── plot.sh
+└── summary.sh
+```
+
+First, try to make sense what the project is about and how to use it.
+
+[DOWNLOAD HERE](https://github.com/igorsdub/gecs-02-project_structure/archive/refs/heads/2025-02_messy-dir.zip)
+
+If you want to practice your terminal skills, you can unzip the file with `unzip` program:
+
+``` bash
+unzip gecs-02-project_structure-2025-02_messy-dir
+```
+
+Once unzipped, open the directory with VS Code (`Cmd+O`).
+
+### Strucutred Project
+
+``` bash
+.
+├── books                           <-- Text files of books used for analysis
+│   ├── dracula.txt
+│   ├── frankenstein.txt
+│   ├── jane_eyre.txt
+│   ├── moby_dick.txt
+│   ├── README.md                   <-- README for the book files
+│   ├── sense_and_sensibility.txt
+│   ├── sherlock_holmes.txt
+│   └── time_machine.txt
+├── counts                          <-- Word count .tsv data
+├── figures                         <-- Bar plots of word counts
+├── README.md
+└── scripts                         <-- Scripts directory
+    ├── count_words.sh              <-- Counts occurences of word in a books
+    ├── get_summary.sh              <-- Gets a book summary
+    └── plot_counts.sh              <-- Plots count histogram in terminal window
+```
+
+This is the same project but organized.
+
+[DOWNLOAD HERE](https://github.com/igorsdub/gecs-02-project_structure/archive/refs/heads/main.zip)
+
+Once downloaded and unzipped, open the directory with VS Code.
+
+# Tips
+
+## Directory Structure
+
+Here is a minimal directory structure adapted from [bvreede on GitHub](https://github.com/bvreede/good-enough-project). There are larger
+
+The directory structure distinguishes three kinds of folders:
+
+-   Read-only (RO): not edited by either code or researcher
+
+-   Human-writeable (HW): edited by the researcher only.
+
+-   Project-generated (PG): folders generated when running the code; these folders can be deleted or emptied and will be completely reconstituted as the project is run.
+
+``` bash
+.
+├── README.md          <- Descrition and how to run the project (HW)
+├── requirements.txt   <- System requirements for runnig the project (HW)
+├── processed_data     <- Processed data ready for analysis (PG)
+├── raw_data           <- The original, immutable data dump (RO)
+├── scripts            <- Scripts for this project (HW)
+└── results            <- Project resuslts: tables, figures, etc. (PG) 
+```
+
+## Naming Files and Directories
+
+Jenny Bryan from The Carpentiries has shared [an online slides](https://speakerdeck.com/jennybc/how-to-name-files) to show how to and how to not name files and directories. The presentation can be summarized as follows.
+
+-   KISS (*Keep It Simple Stupid*): use simple and consistent file names
+
+    -   Machine readable
+
+    -   Human readable
+
+    -   Orders well in a directory
+
+-   No special characters and **no spaces**!
+
+-   Use YYYY-MM-DD date format
+
+-   Use `-` to delimit words and `_` to delimit sections
+
+    -   i.e. `2019-01-19_my-data.csv`
+
+-   Left-pad numbers
+
+    -   i.e. `01_my-data.csv` vs `1_my-data.csv`
+
+    -   If you don’t, file orders get messed up when you get to double-digits
+
+You can use a variation of the above as long as you are consistent within a project.
+
+### README
+
+`README`, or `README.md` since [Markdown](https://en.wikipedia.org/wiki/Markdown) language is the standard now, is the most important file in your project. It grants the power to the new users to execute your project and, remember, your future self. Without it, almost no one will get through your project without a considerable struggle (again, including future you).
+
+[Make a README](https://www.makeareadme.com/) does a great job in conveying this message in a single webpage. Check it out!
+
+## Project Template
+
+Instead of creating proejct directory wiht all its supplementey files, softawre developers came up wiht a boiler plate strucutres that can be created in minutes. [Cookie Cutter Data Science](https://cookiecutter-data-science.drivendata.org/) project is one of those. Although, the default template is aimed towards machine learning / data science researchers, you can find a simpler one shared by other researchers [online](https://github.com/aeturrell/cookiecutter-research-project/tree/main). Another option, to create your own template that suits your needs.
+
+![](images/paste-2.gif)
+
+Also, check out their [Opinions page](https://cookiecutter-data-science.drivendata.org/opinions/) for project management tips.
+
+# References
+
+-   <https://datacarpentry.github.io/rr-organization1/>
+-   <https://bookdown.org/arnold_c/repro-research/2-3-how-to-name-files-and-directories.html>
